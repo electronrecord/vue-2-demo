@@ -1,32 +1,45 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <MainHeader />
+    <div class="router-content">
+      <router-view />
+    </div>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import MainHeader from "@/components/MainHeader.vue";
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+export default {
+  components: {
+    MainHeader
   }
 }
+</script>
+
+<style lang="scss">
+  html,
+  body,
+  #app {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 62.5%;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .p-24 {
+    padding: 24px;
+  }
+
+  .router-content {
+    padding-top: 72px;
+    h1 {
+      text-align: center;
+    }
+  }
 </style>
